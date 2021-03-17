@@ -1,7 +1,7 @@
 [
     {
         "name":"doveadm",
-        "threshold":5,
+        "threshold":1,
         "windowInMin":10,
         "direction":"above",
         "queryFile":"doveadm",

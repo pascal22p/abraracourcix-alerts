@@ -60,7 +60,7 @@ def generateAlert(value, alertConfig):
         else:
             eventAction = "resolve"
     now = datetime.datetime.now().isoformat()
-    dedupKey = hashlib.sha224(json.dumps(alertConfig, separators=(',', ':')).encode()).hexdigest()
+    dedupKey = hashlib.sha224(json.dumps({x: alertConfig[x] for x in alertConfig if x not in "threshold"}, separators=(',', ':')).encode()).hexdigest()
     payload = {
       "payload": {
         "summary": "Alert %d/%d (%s)"%(value, alertConfig["threshold"], alertConfig["direction"]),
@@ -82,11 +82,14 @@ def generateAlert(value, alertConfig):
     logger.debug(payload)
     r = requests.post(url, data = json.dumps(payload))
     #r = requests.get("https://cloud.parois.net")
-    if r.status_code == 200:
-        logger.info("Alert sent to pagerduty")
+    r.raise_for_status()
+    if r.status_code == 202:
+        if eventAction == "trigger":
+            logger.warning("Alert %s sent to pagerduty"%(json.dumps(payload)))
+        else:
+            logger.debug("Alert %s sent to pagerduty"%(json.dumps(payload)))
     else:
-        logger.critical("Failed to send alert to pagerduty")
-        r.raise_for_status()
+        logger.critical("Failed to send alert to pagerduty with status %d and response %s"%(r.status_code, r.content))
 
     return value
 

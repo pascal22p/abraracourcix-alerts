@@ -2,8 +2,11 @@
     "version": true,
     "size": 0,
     "query": {
-        "query_string": {
-            "query": "doveadm"
+        "bool": {
+            "must": [
+                {"query_string": {"query": "application_name:dovecot AND message:\"dsync-local\" AND message:Error"}},
+                {"range": {"timestamp": {"from": "now-10m", "to": "now"}}}
+            ]
         }
     },
     "timeout": "30000ms"
