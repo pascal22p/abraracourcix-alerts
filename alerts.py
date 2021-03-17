@@ -109,7 +109,9 @@ def main():
                         help='Configuration file')
     args = parser.parse_args()
 
-    with open(args.config) as f:
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+
+    with open('%s/%s.json'%dir_path, args.config) as f:
         alertConfigList = json.load(f)
 
     for alertConfig in alertConfigList:
