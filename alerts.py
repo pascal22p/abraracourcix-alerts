@@ -80,8 +80,8 @@ def generateAlert(value, alertConfig):
     url = "https://events.pagerduty.com/v2/enqueue"
 
     logger.debug(payload)
-    #r = requests.post(url, data = json.dumps(payload))
-    r = requests.get("https://cloud.parois.net")
+    r = requests.post(url, data = json.dumps(payload))
+    #r = requests.get("https://cloud.parois.net")
     if r.status_code == 200:
         logger.info("Alert sent to pagerduty")
     else:
