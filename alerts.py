@@ -105,11 +105,11 @@ def main():
                         help='ElasticSearch index')
     parser.add_argument('--PDintegration', metavar='PDINTEGRATION', required=True,
                         help='PagerDuty integration key')
+    parser.add_argument('--config', metavar='CONFIG', required=True,
+                        help='Configuration file')
     args = parser.parse_args()
 
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-
-    with open('%s/alert-config.json'%dir_path) as f:
+    with open(args.config) as f:
         alertConfigList = json.load(f)
 
     for alertConfig in alertConfigList:
