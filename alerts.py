@@ -79,7 +79,6 @@ def generateAlert(value, alertConfig):
 
     url = "https://events.pagerduty.com/v2/enqueue"
 
-    logger.debug(payload)
     r = requests.post(url, data = json.dumps(payload))
     #r = requests.get("https://cloud.parois.net")
     r.raise_for_status()
