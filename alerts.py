@@ -111,7 +111,7 @@ def main():
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
 
-    with open('%s/%s.json'%dir_path, args.config) as f:
+    with open('%s/%s.json'%(dir_path, args.config)) as f:
         alertConfigList = json.load(f)
 
     for alertConfig in alertConfigList:
