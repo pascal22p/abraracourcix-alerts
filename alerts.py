@@ -63,7 +63,7 @@ def generateAlert(value, alertConfig):
     dedupKey = hashlib.sha224(json.dumps({x: alertConfig[x] for x in alertConfig if x not in "threshold"}, separators=(',', ':')).encode()).hexdigest()
     payload = {
       "payload": {
-        "summary": "Alert %d/%d (%s)"%(value, alertConfig["threshold"], alertConfig["direction"]),
+        "summary": "%s %d/%d (%s)"%(alertConfig["description"], value, alertConfig["threshold"], alertConfig["direction"]),
         "timestamp": now,
         "source": "abraracourcix-alerts",
         "severity": "critical",
