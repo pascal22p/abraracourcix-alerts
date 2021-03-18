@@ -6,6 +6,7 @@
         "direction":"above",
         "queryFile":"doveadm",
         "component":"doveadm",
+        "severity":"warning",
         "description":"Doveadm could not connect to the backup server"
     },
     {
@@ -15,6 +16,7 @@
         "direction":"above",
         "queryFile":"backup",
         "component":"rclone",
+        "severity":"warning",
         "description":"Backup files not found in OVH object storage"
     }
 ]

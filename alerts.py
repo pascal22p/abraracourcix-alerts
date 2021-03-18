@@ -66,7 +66,7 @@ def generateAlert(value, alertConfig):
         "summary": "%s %d/%d (%s)"%(alertConfig["description"], value, alertConfig["threshold"], alertConfig["direction"]),
         "timestamp": now,
         "source": "abraracourcix-alerts",
-        "severity": "critical",
+        "severity": alertConfig["severity"],
         "component": alertConfig["component"],
         "custom_details": {
           "description": alertConfig["description"]
