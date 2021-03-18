@@ -4,7 +4,7 @@
     "query": {
         "bool": {
             "must": [
-                {"query_string": {"query": "message:\"backup not available in ovh cloud archive\""}},
+                {"query_string": {"query": "message:\"backup not available in ovh cloud archive\" AND application_name:(homebackup OR mariabackup)"}},
                 {"range": {"timestamp": {"from": "now-10m", "to": "now"}}}
             ]
         }
