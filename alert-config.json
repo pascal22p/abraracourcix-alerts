@@ -2,10 +2,19 @@
     {
         "name":"doveadm",
         "threshold":5,
-        "windowInMin":60,
+        "windowInMin":15,
         "direction":"above",
         "queryFile":"doveadm",
         "component":"doveadm",
         "description":"Doveadm could not connect to the backup server"
+    },
+    {
+        "name":"backup",
+        "threshold":1,
+        "windowInMin":10,
+        "direction":"above",
+        "queryFile":"backup",
+        "component":"rclone",
+        "description":"Backup files not found in OVH object storage"
     }
 ]
