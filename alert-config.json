@@ -1,8 +1,8 @@
 [
     {
         "name":"doveadm",
-        "threshold":1,
-        "windowInMin":10,
+        "threshold":5,
+        "windowInMin":60,
         "direction":"above",
         "queryFile":"doveadm",
         "component":"doveadm",
