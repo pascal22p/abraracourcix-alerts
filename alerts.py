@@ -21,7 +21,7 @@ except ImportError:
     stdout = logging.StreamHandler(sys.stdout)
     logger.addHandler(stdout)
 finally:
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
 
 global dir_path, args
 
@@ -84,9 +84,9 @@ def generateAlert(value, alertConfig):
     r.raise_for_status()
     if r.status_code == 202:
         if eventAction == "trigger":
-            logger.warning("Alert %s sent to pagerduty"%(json.dumps(payload)))
+            logger.warning("Triggered alert %s sent to pagerduty"%(json.dumps(payload)))
         else:
-            logger.debug("Alert %s sent to pagerduty"%(json.dumps(payload)))
+            logger.info("Resolved alert %s sent to pagerduty"%(json.dumps(payload)))
     else:
         logger.critical("Failed to send alert to pagerduty with status %d and response %s"%(r.status_code, r.content))
 
