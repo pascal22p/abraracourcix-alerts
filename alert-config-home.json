@@ -8,5 +8,5 @@
         "component":"mqtt",
         "severity":"warning",
         "description":"mqtt2graphite did not sent any metric"
-    },
+    }
 ]

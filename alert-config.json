@@ -28,5 +28,5 @@
         "component":"system",
         "severity":"warning",
         "description":"OOM killed"
-    },
+    }
 ]
