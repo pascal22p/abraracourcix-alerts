@@ -1,0 +1,13 @@
+{
+    "version": true,
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [
+                {"query_string": {"query": "application_name:\"/home/mqtt2graphite/mqtt2graphite/mqtt2graphite.py\" AND message:sent"}},
+                {"range": {"timestamp": {"from": "now-60m", "to": "now"}}}
+            ]
+        }
+    },
+    "timeout": "30000ms"
+}

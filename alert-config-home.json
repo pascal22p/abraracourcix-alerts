@@ -1,0 +1,12 @@
+[
+    {
+        "name":"mqtt2graphite",
+        "threshold":1,
+        "windowInMin":60,
+        "direction":"below",
+        "queryFile":"mqtt2graphiteSent",
+        "component":"mqtt",
+        "severity":"warning",
+        "description":"mqtt2graphite did not sent any metric"
+    },
+]

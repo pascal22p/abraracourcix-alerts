@@ -18,5 +18,15 @@
         "component":"rclone",
         "severity":"warning",
         "description":"Backup files not found in OVH object storage"
-    }
+    },
+    {
+        "name":"OOM",
+        "threshold":1,
+        "windowInMin":10,
+        "direction":"above",
+        "queryFile":"OOM",
+        "component":"system",
+        "severity":"warning",
+        "description":"OOM killed"
+    },
 ]
