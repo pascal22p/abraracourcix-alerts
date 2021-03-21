@@ -50,12 +50,12 @@ def getESData(queryFile):
 
 def generateAlert(value, alertConfig):
     if alertConfig["direction"] == "below":
-        if value < alertConfig["threshold"]:
+        if value <= alertConfig["threshold"]:
             eventAction = "trigger"
         else:
             eventAction = "resolve"
     else:
-        if value > alertConfig["threshold"]:
+        if value >= alertConfig["threshold"]:
             eventAction = "trigger"
         else:
             eventAction = "resolve"
