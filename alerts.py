@@ -122,6 +122,6 @@ if __name__ == '__main__':
     try:
         main()
     except Exception as e:
-        logger.exception('An unexpected error occurred')
-        logger.exception("".join(traceback.format_exception(None,e, e.__traceback__)))
+        logger.error('An unexpected error occurred')
+        logger.error("".join(traceback.format_exception(None,e, e.__traceback__)))
         sys.exit(2)
