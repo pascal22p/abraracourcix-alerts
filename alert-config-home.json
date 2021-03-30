@@ -8,5 +8,15 @@
         "component":"mqtt",
         "severity":"warning",
         "description":"mqtt2graphite did not sent any metric"
+    },
+    {
+        "name":"zigbee2mqtt",
+        "threshold":1,
+        "windowInMin":60,
+        "direction":"below",
+        "queryFile":"zigbee2mqtt",
+        "component":"zigbee2mqtt",
+        "severity":"warning",
+        "description":"zigbee2mqtt did not publish any metric"
     }
 ]
