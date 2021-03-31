@@ -12,12 +12,14 @@ import requests
 import urllib.parse
 import hashlib
 
+appName = "abraracourcix-alerts"
+
 try:
     from systemd.journal import JournalHandler
-    logger = logging.getLogger('abraracourcix-alerts')
-    logger.addHandler(JournalHandler())
+    logger = logging.getLogger(appName)
+    logger.addHandler(JournalHandler(SYSLOG_IDENTIFIER=appName))
 except ImportError:
-    logger = logging.getLogger('abraracourcix-alerts')
+    logger = logging.getLogger(appName)
     stdout = logging.StreamHandler(sys.stdout)
     logger.addHandler(stdout)
 finally:
