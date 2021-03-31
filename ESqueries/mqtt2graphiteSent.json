@@ -4,7 +4,7 @@
     "query": {
         "bool": {
             "must": [
-                {"query_string": {"query": "application_name:\"/home/mqtt2graphite/mqtt2graphite/mqtt2graphite.py\" AND message:sent"}},
+                {"query_string": {"query": "application_name:\"mqtt2graphite\" AND message:sent"}},
                 {"range": {"timestamp": {"from": "now-60m", "to": "now"}}}
             ]
         }
