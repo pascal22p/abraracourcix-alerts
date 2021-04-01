@@ -4,7 +4,7 @@
     "query": {
         "bool": {
             "must": [
-                {"query_string": {"query": "message:\"OOM\" AND NOT application_name:\"/home/alert/abraracourcix-alerts/alerts.py\""}},
+                {"query_string": {"query": "message:\"OOM\" AND NOT application_name:\"abraracourcix-alerts\""}},
                 {"range": {"timestamp": {"from": "now-10m", "to": "now"}}}
             ]
         }
