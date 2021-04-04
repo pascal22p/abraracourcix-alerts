@@ -1,0 +1,13 @@
+{
+    "version": true,
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [
+                {"query_string": {"query": "application_name:Zigbee2MQTT AND message:\"MQTT publish\""}},
+                {"range": {"timestamp": {"from": "now-60m", "to": "now"}}}
+            ]
+        }
+    },
+    "timeout": "30000ms"
+}
