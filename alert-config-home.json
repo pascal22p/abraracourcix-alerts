@@ -18,5 +18,15 @@
         "component":"zigbee2mqtt",
         "severity":"warning",
         "description":"zigbee2mqtt did not publish any metric"
+    },
+    {
+        "name":"traceback",
+        "threshold":1,
+        "windowInMin":10,
+        "direction":"above",
+        "queryFile":"traceback",
+        "component":"python",
+        "severity":"warning",
+        "description":"Python exception"
     }
 ]
