@@ -21,7 +21,7 @@
     },
     {
         "name":"traceback",
-        "threshold":1,
+        "threshold":3,
         "windowInMin":10,
         "direction":"above",
         "queryFile":"traceback",
