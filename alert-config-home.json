@@ -28,5 +28,15 @@
         "component":"python",
         "severity":"warning",
         "description":"Python exception"
+    },
+    {
+        "name":"openweathermap2graphite",
+        "threshold":5,
+        "windowInMin":10,
+        "direction":"below",
+        "queryFile":"openweathermap2graphite",
+        "component":"openweathermap2graphite",
+        "severity":"warning",
+        "description":"openweathermap2graphite did not publish any metric"
     }
 ]

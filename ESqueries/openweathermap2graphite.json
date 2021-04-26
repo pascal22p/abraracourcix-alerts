@@ -1,0 +1,13 @@
+{
+    "version": true,
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [
+                {"query_string": {"query": "application_name:\"openweathermap2graphite\" AND message:\"Sending openweathermap\""}},
+                {"range": {"timestamp": {"from": "now-10m", "to": "now"}}}
+            ]
+        }
+    },
+    "timeout": "30000ms"
+}
