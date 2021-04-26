@@ -31,7 +31,7 @@
     },
     {
         "name":"openweathermap2graphite",
-        "threshold":5,
+        "threshold":1,
         "windowInMin":10,
         "direction":"below",
         "queryFile":"openweathermap2graphite",
