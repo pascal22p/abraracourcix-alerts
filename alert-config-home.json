@@ -38,5 +38,15 @@
         "component":"openweathermap2graphite",
         "severity":"warning",
         "description":"openweathermap2graphite did not publish any metric"
+    },
+    {
+        "name":"mqtt2graphite_invalid_type",
+        "threshold":1,
+        "windowInMin":10,
+        "direction":"above",
+        "queryFile":"mqtt2graphite_invalid_type",
+        "component":"mqtt2graphite",
+     	"severity":"warning",
+        "description":"mqtt2graphite got an invalid type from mqtt"
     }
 ]
