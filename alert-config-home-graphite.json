@@ -1,0 +1,12 @@
+[
+  {
+    "name": "kitchen power loss",
+    "threshold": 1,
+    "windowInMin": 5,
+    "direction": "below",
+    "query": "summarize(keepLastValue(zigbee2mqtt.kitchen-socket1.power, 100), '5m', 'sum', false)",
+    "component": "mqtt",
+    "severity": "critical",
+    "description": "No power in the kitchen"
+  }
+]
